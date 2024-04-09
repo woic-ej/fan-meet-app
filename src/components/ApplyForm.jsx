@@ -17,6 +17,15 @@ const ApplyForm = () => {
     });
   };
 
+  const validateEmail = () => {
+    const email = document.getElementById("email");
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regex.test(email)) {
+      alert("올바른 이메일 주소를 입력하십시오");
+    }
+  };
+
   return (
     <div className="form-container">
       <div className="info-text">
@@ -71,7 +80,7 @@ const ApplyForm = () => {
             </select>
           </div>
 
-          <button type="submit" className="applyBtn">
+          <button type="submit" className="applyBtn" onClick={validateEmail}>
             응모 하기
           </button>
         </form>
