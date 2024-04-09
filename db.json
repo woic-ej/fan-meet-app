@@ -1,3 +1,20 @@
 {
-  "user": []
+  "user": [
+    {
+      "id": "ef3f",
+      "secondName": "은진",
+      "firstName": "최",
+      "membership": "LF10101010",
+      "email": "asdw",
+      "wantedDate": "sun"
+    },
+    {
+      "id": "4016",
+      "secondName": "은진",
+      "firstName": "최",
+      "membership": "LF10101010",
+      "email": "woic0102@naver.com",
+      "wantedDate": "sun"
+    }
+  ]
 }
