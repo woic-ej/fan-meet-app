@@ -1,0 +1,9 @@
+.container {
+  box-sizing: border-box;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
