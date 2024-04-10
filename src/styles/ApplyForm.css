@@ -73,3 +73,8 @@ form div input {
   background-color: #0bdbb8;
   color: white;
 }
+
+.applyBtn:hover {
+  background-color: #1ec8ac;
+  cursor: pointer;
+}

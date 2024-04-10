@@ -1,4 +1,8 @@
 #poster {
-  width: 700px;
+  width: 680px;
   height: 830px;
+}
+
+#poster:hover {
+  cursor: grab;
 }
