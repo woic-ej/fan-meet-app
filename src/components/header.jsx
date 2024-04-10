@@ -4,7 +4,9 @@ import "../styles/header.css";
 const header = () => {
   return (
     <header className="header">
-      <img src={logo} alt="" id="logo"></img>
+      <a href="https://weverse.io/" target="_blank">
+        <img src={logo} alt="" id="logo"></img>
+      </a>
     </header>
   );
 };

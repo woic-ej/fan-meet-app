@@ -42,6 +42,11 @@ hr {
   margin: 0;
 }
 
+.place > a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .apply-form {
   height: 480px;
   display: flex;

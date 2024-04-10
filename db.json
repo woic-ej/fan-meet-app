@@ -1,28 +1,3 @@
 {
-  "user": [
-    {
-      "id": "04da",
-      "secondName": "은진",
-      "firstName": "최",
-      "membership": "LF10101010",
-      "email": "woic0102@naver.com",
-      "wantedDate": "sun"
-    },
-    {
-      "id": "3272",
-      "secondName": "은진",
-      "firstName": "최",
-      "membership": "LF10101010",
-      "email": "woic0102@naver.com",
-      "wantedDate": "sat"
-    },
-    {
-      "id": "1724",
-      "secondName": "은진",
-      "firstName": "김",
-      "membership": "1231241",
-      "email": "ww12329@gmail.com",
-      "wantedDate": "sun"
-    }
-  ]
+  "user": []
 }

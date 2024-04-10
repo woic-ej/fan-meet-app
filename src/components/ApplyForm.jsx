@@ -72,7 +72,12 @@ const ApplyForm = ({ user, setUser, setStep }) => {
         </div>
         <div className="place">
           <p>일시: 2024.5.11 SAT 6PM / 2024 5.12 SUN 5PM</p>
-          <p>장소: 잠실 실내 체육관</p>
+          <a
+            href="https://www.google.com/maps/place/%EC%9E%A0%EC%8B%A4%EC%8B%A4%EB%82%B4%EC%B2%B4%EC%9C%A1%EA%B4%80/data=!4m6!3m5!1s0x357ca451397f664d:0x82edb56cd4a74e2d!8m2!3d37.5162016!4d127.0759248!16zL20vMGJyNzYz?entry=ttu"
+            target="_blank"
+          >
+            <p>장소: 잠실 실내 체육관 (위치 보기)</p>
+          </a>
         </div>
       </div>
       <hr></hr>
