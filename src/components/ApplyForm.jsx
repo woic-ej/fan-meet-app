@@ -1,16 +1,9 @@
 import { useState } from "react";
 import "../styles/ApplyForm.css";
 
-const ApplyForm = () => {
+const ApplyForm = ({ user, setUser, setStep }) => {
   const [Error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [user, setUser] = useState({
-    secondName: "",
-    firstName: "",
-    membership: "",
-    email: "",
-    wantedDate: "sat",
-  });
 
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -51,6 +44,7 @@ const ApplyForm = () => {
         body: JSON.stringify(user),
       });
       if (!response.ok) throw new Error("에러가 발생하였습니다.");
+      setStep(1);
     } catch (error) {
       setError(error);
     } finally {
