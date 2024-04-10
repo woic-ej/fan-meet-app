@@ -1,6 +1,21 @@
 import { useState } from "react";
 import "../styles/ApplyForm.css";
 
+const UserInputItem = ({ label, name, handleInputChange }) => {
+  return (
+    <div>
+      <label htmlFor={name}>{label}</label>
+      <input
+        type="text"
+        id={name}
+        name={name}
+        required
+        onChange={handleInputChange}
+      ></input>
+    </div>
+  );
+};
+
 const ApplyForm = ({ user, setUser, setStep }) => {
   const [Error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -25,10 +40,6 @@ const ApplyForm = ({ user, setUser, setStep }) => {
       return false;
     }
     return true;
-  };
-
-  const handleEmailBlur = () => {
-    isValidEmail();
   };
 
   const handleSubmit = async (event) => {
@@ -67,47 +78,26 @@ const ApplyForm = ({ user, setUser, setStep }) => {
       <hr></hr>
       <div className="apply-form">
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="secondName">이름</label>
-            <input
-              type="text"
-              id="secondName"
-              name="secondName"
-              required
-              onChange={handleInputChange}
-            ></input>
-          </div>
-          <div>
-            <label htmlFor="firstName">성</label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              required
-              onChange={handleInputChange}
-            ></input>
-          </div>
-          <div>
-            <label htmlFor="membership">멤버쉽 번호</label>
-            <input
-              type="text"
-              id="membership"
-              name="membership"
-              required
-              onChange={handleInputChange}
-            ></input>
-          </div>
-          <div>
-            <label htmlFor="email">이메일</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              required
-              onChange={handleInputChange}
-              onBlur={handleEmailBlur}
-            ></input>
-          </div>
+          <UserInputItem
+            label="이름"
+            name="secondName"
+            handleInputChange={handleInputChange}
+          />
+          <UserInputItem
+            label="성"
+            name="firstName"
+            handleInputChange={handleInputChange}
+          />
+          <UserInputItem
+            label="멤버쉽 번호"
+            name="membership"
+            handleInputChange={handleInputChange}
+          />
+          <UserInputItem
+            label="이메일"
+            name="email"
+            handleInputChange={handleInputChange}
+          />
           <div>
             <label htmlFor="wantedDate">응모 날짜</label>
             <select
