@@ -22,6 +22,7 @@ const Poster = () => {
   useEffect(() => {
     const changePoster = () => {
       setCurrentPosterIndex((prev) => {
+        console.log(prev);
         return prev === posterArr.length - 1 ? 0 : prev + 1;
       });
     };

@@ -18,7 +18,7 @@ const UserInputItem = ({ label, name, handleInputChange }) => {
 
 const ApplyForm = ({ user, setUser, setStep }) => {
   const [Error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -42,12 +42,11 @@ const ApplyForm = ({ user, setUser, setStep }) => {
     return true;
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const addBtnClassName = () => {
+    document.getElementById("applyBtn").className += " clicked";
+  };
 
-    if (!isValidEmail()) return;
-
-    setIsLoading(true);
+  const postUserData = async () => {
     try {
       const response = await fetch("http://localhost:3001/user", {
         method: "POST",
@@ -58,9 +57,16 @@ const ApplyForm = ({ user, setUser, setStep }) => {
       setStep(1);
     } catch (error) {
       setError(error);
-    } finally {
-      setIsLoading(false);
     }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!isValidEmail()) return;
+
+    addBtnClassName();
+    setTimeout(postUserData, 3000);
   };
 
   return (
@@ -116,7 +122,7 @@ const ApplyForm = ({ user, setUser, setStep }) => {
             </select>
           </div>
 
-          <button type="submit" className="applyBtn">
+          <button type="submit" className="applyBtn" id="applyBtn">
             응모 하기
           </button>
         </form>

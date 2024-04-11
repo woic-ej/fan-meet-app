@@ -83,3 +83,22 @@ form div input {
   background-color: #1ec8ac;
   cursor: pointer;
 }
+
+.clicked {
+  background: linear-gradient(to right, #0bdbb8, #a9b0f9);
+  background-size: 200% 200%;
+  animation: gradientAnimation 1s infinite alternate;
+}
+
+.clicked:hover {
+  cursor: wait;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
