@@ -9,18 +9,14 @@ const Poster = () => {
   const posterArr = [poster1, poster2, poster3, poster4];
   const [currentPoserIndex, setCurrentPosterIndex] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
-  const [isMouseLeave, setIsMouseLeave] = useState(0);
+  const [mouseToggle, setMouseToggle] = useState(false);
 
   const handleMouseEnter = () => {
     clearInterval(intervalId);
-    console.log("마우스 올라감" + intervalId);
   };
 
   const handleMouseLeave = () => {
-    setIsMouseLeave((prev) => {
-      return prev + 1;
-    });
-    console.log("마우스 내려감" + intervalId);
+    setMouseToggle(!mouseToggle);
   };
 
   useEffect(() => {
@@ -33,10 +29,8 @@ const Poster = () => {
     const id = setInterval(changePoster, 2500);
     setIntervalId(id);
 
-    console.log("현재 id값 " + id);
-
     return () => clearInterval(intervalId);
-  }, [isMouseLeave]);
+  }, [mouseToggle]);
 
   return (
     <div>
