@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/ApplyFormSection.css";
+import Error from "./common/Error";
 
 const UserInputItem = ({ label, name, handleInputChange }) => {
   return (
@@ -17,7 +18,7 @@ const UserInputItem = ({ label, name, handleInputChange }) => {
 };
 
 const ApplyForm = ({ user, setUser, setStep }) => {
-  const [Error, setError] = useState(null);
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (event) => {
@@ -120,7 +121,7 @@ const ApplyForm = ({ user, setUser, setStep }) => {
               <option value="sun"> 2024 5.12 SUN 5PM </option>
             </select>
           </div>
-
+          <Error error={error} />
           <button
             type="submit"
             className={`applyBtn ${isLoading ? "clicked" : ""}`}
