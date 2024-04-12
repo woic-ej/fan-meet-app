@@ -19,6 +19,7 @@ function App() {
     wantedDate: "sat",
   };
   const [user, setUser] = useState(userInitial);
+
   return (
     <div className="container">
       <Header />
