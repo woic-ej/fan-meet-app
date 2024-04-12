@@ -1,5 +1,5 @@
-import logo from "../assets/weverse-logo.png";
-import "../styles/header.css";
+import logo from "../../assets/weverse-logo.png";
+import "../../styles/header.css";
 
 const header = () => {
   return (

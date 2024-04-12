@@ -1,28 +1,33 @@
 import { useState } from "react";
 import "./App.css";
-import ApplyForm from "./components/ApplyForm";
+import ApplyFormSection from "./components/ApplyFormSection";
 import Poster from "./components/Poster";
-import Header from "./components/header";
-import CompletePage from "./components/CompletePage";
+import Header from "./components/common/header";
+import CompleteInfoSection from "./components/CompleteInfoSection";
 
 function App() {
-  const [step, setStep] = useState(0);
-  const [user, setUser] = useState({
+  const stepInitial = {
+    apply: 0,
+    complete: 1,
+  };
+  const [step, setStep] = useState(stepInitial.apply);
+  const userInitial = {
     secondName: "",
     firstName: "",
     membership: "",
     email: "",
     wantedDate: "sat",
-  });
+  };
+  const [user, setUser] = useState(userInitial);
   return (
     <div className="container">
       <Header />
       <div className="main-container">
         <Poster />
-        {step === 0 && (
-          <ApplyForm user={user} setUser={setUser} setStep={setStep} />
+        {step === stepInitial.apply && (
+          <ApplyFormSection user={user} setUser={setUser} setStep={setStep} />
         )}
-        {step === 1 && <CompletePage user={user} />}
+        {step === stepInitial.complete && <CompleteInfoSection user={user} />}
       </div>
     </div>
   );

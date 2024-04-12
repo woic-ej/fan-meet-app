@@ -1,4 +1,4 @@
-import "../styles/CompletePage.css";
+import "../styles/CompleteInfoSection.css";
 
 const UserDataItem = ({ label, value }) => {
   if (label === "응모 날짜" && value === "sat") value = "2024.5.11 SAT 6PM";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/ApplyForm.css";
+import "../styles/ApplyFormSection.css";
 
 const UserInputItem = ({ label, name, handleInputChange }) => {
   return (
