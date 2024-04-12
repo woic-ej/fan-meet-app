@@ -18,7 +18,7 @@ const UserInputItem = ({ label, name, handleInputChange }) => {
 
 const ApplyForm = ({ user, setUser, setStep }) => {
   const [Error, setError] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -42,10 +42,6 @@ const ApplyForm = ({ user, setUser, setStep }) => {
     return true;
   };
 
-  const addBtnClassName = () => {
-    document.getElementById("applyBtn").className += " clicked";
-  };
-
   const postUserData = async () => {
     try {
       const response = await fetch("http://localhost:3001/user", {
@@ -57,6 +53,8 @@ const ApplyForm = ({ user, setUser, setStep }) => {
       setStep(1);
     } catch (error) {
       setError(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -65,7 +63,8 @@ const ApplyForm = ({ user, setUser, setStep }) => {
 
     if (!isValidEmail()) return;
 
-    addBtnClassName();
+    setIsLoading(true);
+
     setTimeout(postUserData, 3000);
   };
 
@@ -122,7 +121,11 @@ const ApplyForm = ({ user, setUser, setStep }) => {
             </select>
           </div>
 
-          <button type="submit" className="applyBtn" id="applyBtn">
+          <button
+            type="submit"
+            className={`applyBtn ${isLoading ? "clicked" : ""}`}
+            id="applyBtn"
+          >
             응모 하기
           </button>
         </form>
